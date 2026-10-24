@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homenaje y Trayectoria Profesional | Ing. Tomás Toledo Lagunas</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 antialiased" x-data="{ tab: 'inicio' }">
+
+    <!-- Header / Hero Section -->
+    <header class="bg-gradient-to-r from-slate-900 via-blue-900 to-indigo-900 text-white py-16 px-6 shadow-xl border-b border-blue-800">
+        <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-8">
+            <div class="space-y-3 text-center md:text-left">
+                <span class="bg-blue-600/50 border border-blue-400/30 text-blue-200 text-xs font-semibold px-3 py-1 rounded-full uppercase tracking-widest">Ingeniero &bull; Educador &bull; Atleta &bull; Gran Papá</span>
+                <h1 class="text-3xl md:text-5xl font-extrabold tracking-tight">Ing. Tomás Toledo Lagunas</h1>
+                <p class="text-slate-300 text-base md:text-lg max-w-2xl font-light">
+                    Una trayectoria excepcional marcada por la excelencia técnica, la pasión por la enseñanza, el deporte y el amor incondicional a su familia.
+                </p>
+            </div>
+            <!-- Foto principal de perfil -->
+            <div class="shrink-0">
+                <div class="w-40 h-40 md:w-48 md:h-48 rounded-2xl bg-blue-800/50 border-4 border-blue-400/30 overflow-hidden shadow-2xl flex items-center justify-center">
+                    <img src="WhatsApp Image 2026-10-23 at 8.19.49 PM.jpeg" alt="Ing. Tomás Toledo Lagunas" class="w-full h-full object-cover" onerror="this.src='https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=400&q=80'">
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Navegación por Pestañas (Ordenada: Trabajo -> Béisbol -> Familia al final) -->
+    <nav class="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-slate-200 shadow-sm">
+        <div class="max-w-6xl mx-auto px-4 overflow-x-auto">
+            <div class="flex space-x-2 md:space-x-3 py-3 whitespace-nowrap">
+                <button @click="tab = 'inicio'" :class="tab === 'inicio' ? 'bg-blue-600 text-white shadow-md shadow-blue-500/20' : 'bg-slate-100 text-slate-600 hover:bg-slate-200'" class="px-3.5 py-2 rounded-xl text-sm font-semibold transition-all">🏠 Inicio</button>
+                <button @click="tab = 'ingenieria'" :class="tab === 'ingenieria' ? 'bg-blue-600 text-white shadow-md shadow-blue-500/20' : 'bg-slate-100 text-slate-600 hover:bg-slate-200'" class="px-3.5 py-2 rounded-xl text-sm font-semibold transition-all">⚡ Ingeniería y UTM</button>
+                <button @click="tab = 'empresas'" :class="tab === 'empresas' ? 'bg-blue-600 text-white shadow-md shadow-blue-500/20' : 'bg-slate-100 text-slate-600 hover:bg-slate-200'" class="px-3.5 py-2 rounded-xl text-sm font-semibold transition-all">💼 Inicios</button>
+                <button @click="tab = 'docencia'" :class="tab === 'docencia' ? 'bg-blue-600 text-white shadow-md shadow-blue-500/20' : 'bg-slate-100 text-slate-600 hover:bg-slate-200'" class="px-3.5 py-2 rounded-xl text-sm font-semibold transition-all">📚 Docencia</button>
+                <button @click="tab = 'ieepo'" :class="tab === 'ieepo' ? 'bg-blue-600 text-white shadow-md shadow-blue-500/20' : 'bg-slate-100 text-slate-600 hover:bg-slate-200'" class="px-3.5 py-2 rounded-xl text-sm font-semibold transition-all">🏛️ IEEPO</button>
+                <button @click="tab = 'habilidades'" :class="tab === 'habilidades' ? 'bg-blue-600 text-white shadow-md shadow-blue-500/20' : 'bg-slate-100 text-slate-600 hover:bg-slate-200'" class="px-3.5 py-2 rounded-xl text-sm font-semibold transition-all">🛠️ Habilidades</button>
+                <button @click="tab = 'beisbol'" :class="tab === 'beisbol' ? 'bg-amber-600 text-white shadow-md shadow-amber-500/20' : 'bg-amber-50 text-amber-700 hover:bg-amber-100'" class="px-3.5 py-2 rounded-xl text-sm font-semibold transition-all">⚾ Béisbol</button>
+                <button @click="tab = 'familia'" :class="tab === 'familia' ? 'bg-rose-600 text-white shadow-md shadow-rose-500/20' : 'bg-rose-50 text-rose-700 hover:bg-rose-100'" class="px-3.5 py-2 rounded-xl text-sm font-semibold transition-all">❤️ Familia</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Contenido de las Pestañas -->
+    <main class="max-w-6xl mx-auto px-4 py-10 min-h-[600px]">
+
+        <!-- PESTAÑA 1: INICIO -->
+        <div x-show="tab === 'inicio'" class="space-y-8">
+            <div class="bg-white rounded-3xl p-8 shadow-sm border border-slate-100 grid md:grid-cols-3 gap-8 items-center">
+                <div class="md:col-span-2 space-y-4">
+                    <h2 class="text-2xl font-bold text-slate-900 border-l-4 border-blue-600 pl-3">Una vida de esfuerzo y logros</h2>
+                    <p class="text-slate-600 leading-relaxed">
+                        Esta página web es un reconocimiento especial a la brillante y perseverante trayectoria del <strong>Ing. Tomás Toledo Lagunas</strong>. Desde sus años de alta exigencia universitaria en la UTM hasta su impacto actual en las políticas y recursos educativos del estado a través del IEEPO.
+                    </p>
+                    <p class="text-slate-600 leading-relaxed">
+                        Su carrera es el claro reflejo de la disciplina: un profesional capaz de dominar la tecnología dura de la ingeniería electrónica, transmitir el conocimiento con vocación inquebrantable en las aulas, y liderar instituciones educativas hacia la mejora continua.
+                    </p>
+                </div>
+                <div class="rounded-2xl overflow-hidden shadow-md border border-slate-100">
+                    <img src="WhatsApp Image 2026-10-23 at 8.19.49 PM (1).jpeg" alt="Momentos" class="w-full h-48 object-cover">
+                </div>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-6">
+                <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-100 space-y-2">
+                    <div class="text-blue-600 font-bold text-xl">01</div>
+                    <h3 class="font-bold text-slate-900">Formación Rigurosa</h3>
+                    <p class="text-sm text-slate-600">Egresado de Ingeniería Electrónica de la UTM, destacando por concluir con éxito en una generación muy selecta.</p>
+                </div>
+                <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-100 space-y-2">
+                    <div class="text-blue-600 font-bold text-xl">02</div>
+                    <h3 class="font-bold text-slate-900">Liderazgo Académico</h3>
+                    <p class="text-sm text-slate-600">Profesor en la Universidad Anáhuac, Secundaria Técnica 1 y director de secundaria.</p>
+                </div>
+                <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-100 space-y-2">
+                    <div class="text-blue-600 font-bold text-xl">03</div>
+                    <h3 class="font-bold text-slate-900">Impacto Estatal</h3>
+                    <p class="text-sm text-slate-600">Especialista en consejos técnicos y optimización de recursos educativos en el IEEPO.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- PESTAÑA 2: INGENIERÍA Y UTM -->
+        <div x-show="tab === 'ingenieria'" class="space-y-8" style="display: none;">
+            <div class="bg-white rounded-3xl p-8 shadow-sm border border-slate-100 space-y-6">
+                <div class="border-l-4 border-blue-600 pl-3">
+                    <span class="text-xs font-bold text-blue-600 uppercase tracking-wider">Alma Mater</span>
+                    <h2 class="text-2xl font-bold text-slate-900">Universidad Tecnológica de la Mixteca (UTM)</h2>
+                </div>
+                <p class="text-slate-600 leading-relaxed">
+                    Cursar la carrera de <strong>Ingeniería Electrónica</strong> en la UTM representó un reto de alta exigencia académica. Fue parte de ese selecto grupo de estudiantes que lograron culminar satisfactoriamente el plan de estudios, caracterizado por su alta dificultad, materias científicas pesadas y laboratorios demandantes.
+                </p>
+                <div class="rounded-2xl overflow-hidden shadow-md border border-slate-100 max-w-xl mx-auto">
+                    <img src="utm2.jpg" alt="UTM" class="w-full h-64 object-cover">
+                </div>
+                <div class="grid md:grid-cols-2 gap-6 pt-4">
+                    <div class="bg-slate-50 p-6 rounded-2xl border border-slate-200 space-y-3">
+                        <h3 class="font-semibold text-slate-900 flex items-center gap-2"><span>📐</span> Reto y Excelencia</h3>
+                        <p class="text-sm text-slate-600">Superó los filtros y materias más complejas de la ingeniería, destacando por su perseverancia, pensamiento lógico y capacidad analítica sobresaliente.</p>
+                    </div>
+                    <div class="bg-slate-50 p-6 rounded-2xl border border-slate-200 space-y-3">
+                        <h3 class="font-semibold text-slate-900 flex items-center gap-2"><span>⚡</span> Bases Tecnológicas</h3>
+                        <p class="text-sm text-slate-600">Adquirió bases sólidas en circuitos, diseño electrónico, sistemas automatizados y resolución de problemas técnicos complejos.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- PESTAÑA 3: INICIOS PROFESIONALES -->
+        <div x-show="tab === 'empresas'" class="space-y-8" style="display: none;">
+            <div class="bg-white rounded-3xl p-8 shadow-sm border border-slate-100 space-y-6">
+                <div class="border-l-4 border-blue-600 pl-3">
+                    <span class="text-xs font-bold text-blue-600 uppercase tracking-wider">Experiencia en la Industria</span>
+                    <h2 class="text-2xl font-bold text-slate-900">Primeros Pasos y Diversas Empresas</h2>
+                </div>
+                <p class="text-slate-600 leading-relaxed">
+                    Antes de consolidar su vocación en la docencia y el servicio público, incursionó en el sector privado colaborando en diversas empresas tecnológicas e industriales de menor escala.
+                </p>
+                <p class="text-slate-600 leading-relaxed">
+                    Esta etapa fue fundamental: en estos espacios aprendió a enfrentarse a la realidad del campo laboral, absorbiendo múltiples conocimientos prácticos, adaptándose a herramientas tecnológicas y entendiendo el valor del trabajo operativo y de mantenimiento especializado.
+                </p>
+            </div>
+        </div>
+
+        <!-- PESTAÑA 4: DOCENCIA Y DIRECCIÓN -->
+        <div x-show="tab === 'docencia'" class="space-y-8" style="display: none;">
+            <div class="bg-white rounded-3xl p-8 shadow-sm border border-slate-100 space-y-6">
+                <div class="border-l-4 border-blue-600 pl-3">
+                    <span class="text-xs font-bold text-blue-600 uppercase tracking-wider">Vocación de Maestro</span>
+                    <h2 class="text-2xl font-bold text-slate-900">Universidad Anáhuac, Secundaria Técnica 1 y Dirección Escolar</h2>
+                </div>
+                <p class="text-slate-600 leading-relaxed">
+                    Su transición a la docencia multiplicó su impacto en la sociedad. Demostró una gran facilidad para transmitir conocimientos complejos de forma sencilla, paciente y motivadora.
+                </p>
+                <div class="grid md:grid-cols-3 gap-6">
+                    <div class="bg-slate-50 p-6 rounded-2xl border border-slate-200 space-y-2">
+                        <h3 class="font-bold text-slate-900">Universidad Anáhuac</h3>
+                        <p class="text-xs text-slate-600">Formación a nivel superior, exigiendo rigor académico y compartiendo experiencia profesional con las nuevas generaciones.</p>
+                    </div>
+                    <div class="bg-slate-50 p-6 rounded-2xl border border-slate-200 space-y-2">
+                        <h3 class="font-bold text-slate-900">Escuela Secundaria Técnica 1</h3>
+                        <p class="text-xs text-slate-600">Docencia directa con jóvenes en una de las instituciones de mayor tradición e historia en el estado.</p>
+                    </div>
+                    <div class="bg-slate-50 p-6 rounded-2xl border border-slate-200 space-y-2">
+                        <h3 class="font-bold text-slate-900">Dirección de Secundaria</h3>
+                        <p class="text-xs text-slate-600">Liderazgo directivo, gestión administrativa, manejo de personal docente y guía institucional con calidez humana.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- PESTAÑA 5: IEEPO Y EVENTOS -->
+        <div x-show="tab === 'ieepo'" class="space-y-8" style="display: none;">
+            <div class="bg-gradient-to-br from-blue-900 to-indigo-900 text-white rounded-3xl p-8 shadow-md space-y-6">
+                <span class="bg-blue-800 text-blue-200 text-xs font-semibold px-3 py-1 rounded-full uppercase tracking-wider">Función Pública Actual</span>
+                <h2 class="text-3xl font-bold">Instituto Estatal de Educación Pública de Oaxaca (IEEPO)</h2>
+                <p class="text-blue-100 leading-relaxed">
+                    Actualmente desempeña un papel clave en el IEEPO, participando activamente en los <strong>consejos técnicos</strong> y en la gestión, distribución y optimización de los <strong>recursos de la educación básica</strong> (primarias, secundarias y preparatorias), además de su destacada presencia en ceremonias institucionales y comités de trabajo.
+                </p>
+            </div>
+
+            <!-- Galería de fotos oficiales/trabajo -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+                <div class="bg-white p-2 rounded-2xl border border-slate-200 shadow-sm">
+                    <img src="tom1.jpg" alt="Trabajo en equipo IEEPO" class="rounded-xl w-full h-52 object-cover">
+                    <p class="text-center text-xs text-slate-500 mt-2 font-medium">Reuniones de trabajo y equipos estatales</p>
+                </div>
+                <div class="bg-white p-2 rounded-2xl border border-slate-200 shadow-sm">
+                    <img src="tom2.jpg" alt="Servicio Educativo" class="rounded-xl w-full h-52 object-cover">
+                    <p class="text-center text-xs text-slate-500 mt-2 font-medium">Revisión de planes y servicios educativos</p>
+                </div>
+                <div class="bg-white p-2 rounded-2xl border border-slate-200 shadow-sm">
+                    <img src="tom3.jpg" alt="Consejos Técnicos" class="rounded-xl w-full h-52 object-cover">
+                    <p class="text-center text-xs text-slate-500 mt-2 font-medium">Asesoría y consejos técnicos</p>
+                </div>
+                <div class="bg-white p-2 rounded-2xl border border-slate-200 shadow-sm">
+                    <img src="tom4.jpg" alt="Ceremonia Cívica" class="rounded-xl w-full h-52 object-cover">
+                    <p class="text-center text-xs text-slate-500 mt-2 font-medium">Ceremonias oficiales y cívicas</p>
+                </div>
+                <div class="bg-white p-2 rounded-2xl border border-slate-200 shadow-sm">
+                    <img src="tom5.jpg" alt="Entrega de reconocimientos" class="rounded-xl w-full h-52 object-cover">
+                    <p class="text-center text-xs text-slate-500 mt-2 font-medium">Entrega de reconocimientos institucionales</p>
+                </div>
+                <div class="bg-white p-2 rounded-2xl border border-slate-200 shadow-sm">
+                    <img src="tom6.jpg" alt="Aniversario Plan DN-III-E" class="rounded-xl w-full h-52 object-cover">
+                    <p class="text-center text-xs text-slate-500 mt-2 font-medium">Participación en eventos estatales</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- PESTAÑA 6: HABILIDADES Y PERFIL -->
+        <div x-show="tab === 'habilidades'" class="space-y-8" style="display: none;">
+            <div class="bg-white rounded-3xl p-8 shadow-sm border border-slate-100 space-y-6">
+                <div class="border-l-4 border-blue-600 pl-3">
+                    <span class="text-xs font-bold text-blue-600 uppercase tracking-wider">Perfil Profesional</span>
+                    <h2 class="text-2xl font-bold text-slate-900">Competencias y Habilidades Clave</h2>
+                </div>
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div class="p-6 rounded-2xl bg-slate-50 border border-slate-200 space-y-3">
+                        <h3 class="font-bold text-slate-900 flex items-center gap-2"><span>📊</span> Gestión y Planeación Educativa</h3>
+                        <ul class="text-sm text-slate-600 space-y-2 list-disc list-inside">
+                            <li>Coordinación de Consejos Técnicos Escolares.</li>
+                            <li>Planeación y distribución de recursos para educación básica y media superior.</li>
+                            <li>Revisión y diseño de estrategias pedagógicas estatales.</li>
+                        </ul>
+                    </div>
+                    <div class="p-6 rounded-2xl bg-slate-50 border border-slate-200 space-y-3">
+                        <h3 class="font-bold text-slate-900 flex items-center gap-2"><span>👥</span> Liderazgo y Dirección</h3>
+                        <p class="text-sm text-slate-600">Capacidad probada para dirigir planteles escolares, mediar conflictos, coordinar equipos de maestros e impulsar un ambiente de trabajo colaborativo y ordenado.</p>
+                    </div>
+                    <div class="p-6 rounded-2xl bg-slate-50 border border-slate-200 space-y-3">
+                        <h3 class="font-bold text-slate-900 flex items-center gap-2"><span>🔧</span> Rigor Técnico y Resolución</h3>
+                        <p class="text-sm text-slate-600">Pensamiento lógico-matemático desarrollado en la ingeniería, facilidad para el análisis de problemas complejos y adopción rápida de herramientas tecnológicas.</p>
+                    </div>
+                    <div class="p-6 rounded-2xl bg-slate-50 border border-slate-200 space-y-3">
+                        <h3 class="font-bold text-slate-900 flex items-center gap-2"><span>🗣️</span> Comunicación y Docencia</h3>
+                        <p class="text-sm text-slate-600">Excelente oratoria pedagógica, empatía con los estudiantes y claridad absoluta para explicar conceptos abstractos y técnicos.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- PESTAÑA 7: BÉISBOL (NUEVA PESTAÑA EXCLUSIVA) -->
+        <div x-show="tab === 'beisbol'" class="space-y-8" style="display: none;">
+            <div class="bg-gradient-to-br from-amber-700 to-orange-900 text-white rounded-3xl p-8 shadow-md space-y-4">
+                <span class="bg-amber-800 text-amber-200 text-xs font-semibold px-3 py-1 rounded-full uppercase tracking-wider">Pasión y Deporte</span>
+                <h2 class="text-3xl font-bold">Amor por el Béisbol</h2>
+                <p class="text-amber-100 leading-relaxed">
+                    El béisbol es mucho más que un deporte: es entrega, unión familiar, disciplina y momentos inolvidables en el campo con los equipos, los uniformes de los Osos y las grandes experiencias compartidas.
+                </p>
+            </div>
+
+            <!-- Galería específica de Béisbol -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+                <div class="bg-white p-2 rounded-2xl border border-slate-200 shadow-sm"><img src="WhatsApp Image 2026-10-23 at 8.19.49 PM (1).jpeg" alt="Béisbol" class="rounded-xl w-full h-60 object-cover"></div>
+                <div class="bg-white p-2 rounded-2xl border border-slate-200 shadow-sm"><img src="WhatsApp Image 2026-10-23 at 8.19.50 PM (2).jpeg" alt="Béisbol" class="rounded-xl w-full h-60 object-cover"></div>
+                <div class="bg-white p-2 rounded-2xl border border-slate-200 shadow-sm"><img src="WhatsApp Image 2026-10-23 at 8.19.50 PM (5).jpeg" alt="Béisbol" class="rounded-xl w-full h-60 object-cover"></div>
+                <div class="bg-white p-2 rounded-2xl border border-slate-200 shadow-sm"><img src="WhatsApp Image 2026-10-23 at 8.19.50 PM (9).jpeg" alt="Béisbol" class="rounded-xl w-full h-60 object-cover"></div>
+                <div class="bg-white p-2 rounded-2xl border border-slate-200 shadow-sm"><img src="WhatsApp Image 2026-10-23 at 8.19.50 PM (15).jpeg" alt="Béisbol" class="rounded-xl w-full h-60 object-cover"></div>
+                <div class="bg-white p-2 rounded-2xl border border-slate-200 shadow-sm"><img src="WhatsApp Image 2026-10-23 at 8.19.50 PM (16).jpeg" alt="Béisbol" class="rounded-xl w-full h-60 object-cover"></div>
+                <div class="bg-white p-2 rounded-2xl border border-slate-200 shadow-sm"><img src="WhatsApp Image 2026-10-23 at 8.19.50 PM.jpeg" alt="Béisbol" class="rounded-xl w-full h-60 object-cover"></div>
+            </div>
+        </div>
+
+        <!-- PESTAÑA 8: FAMILIA (ÚLTIMA PESTAÑA ESPECIAL Y EMOTIVA) -->
+        <div x-show="tab === 'familia'" class="space-y-12" style="display: none;">
+            <!-- Mensaje emotivo -->
+            <div class="bg-gradient-to-br from-rose-900 via-pink-900 to-rose-950 text-white rounded-3xl p-8 md:p-12 shadow-xl border border-rose-800 space-y-6 text-center">
+                <span class="bg-rose-800 text-rose-200 text-xs font-semibold px-4 py-1.5 rounded-full uppercase tracking-widest">El mensaje más importante</span>
+                <h2 class="text-3xl md:text-5xl font-extrabold tracking-tight">¡Eres el mejor papá del mundo!</h2>
+                
+                <div class="max-w-3xl mx-auto space-y-4 text-rose-100 text-base md:text-lg leading-relaxed font-light">
+                    <p>
+                        Papá: Queremos decirte que estamos infinitamente orgullosos de todo lo que has logrado. Adoramos tu inteligencia, tu entrega diaria, tu paciencia y el gran ejemplo que eres para nosotros en cada paso de nuestras vidas.
+                    </p>
+                    <p>
+                        Sabemos el esfuerzo monumental detrás de cada desvelo, de cada proyecto, de tus años de estudio en la UTM y de tu incansable labor en la educación. Todo lo que has construido deja una huella imborrable en la sociedad, pero sobre todo, en nuestros corazones.
+                    </p>
+                    <p class="font-normal text-white pt-2">
+                        Estamos profundamente agradecidos y orgullosos de ti. Te amamos con todo nuestro ser.
+                    </p>
+                </div>
+
+                <div class="pt-6 border-t border-rose-800/60 grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
+                    <div class="bg-rose-950/60 p-4 rounded-2xl border border-rose-800/40">
+                        <span class="block text-xl">👦</span>
+                        <span class="font-bold text-rose-200">Tomás</span>
+                        <span class="block text-xs text-rose-300">Tu hijo</span>
+                    </div>
+                    <div class="bg-rose-950/60 p-4 rounded-2xl border border-rose-800/40">
+                        <span class="block text-xl">👦</span>
+                        <span class="font-bold text-rose-200">Matías</span>
+                        <span class="block text-xs text-rose-300">Tu hijo</span>
+                    </div>
+                    <div class="bg-rose-950/60 p-4 rounded-2xl border border-rose-800/40">
+                        <span class="block text-xl">👩</span>
+                        <span class="font-bold text-rose-200">Matilde</span>
+                        <span class="block text-xs text-rose-300">Tu esposa</span>
+                    </div>
+                    <div class="bg-rose-950/60 p-4 rounded-2xl border border-rose-800/40">
+                        <span class="block text-xl">❤️</span>
+                        <span class="font-bold text-rose-200">Tus Papás</span>
+                        <span class="block text-xs text-rose-300">Familia unida</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Gran Galería de Momentos Familiares -->
+            <div class="space-y-6">
+                <h3 class="text-2xl font-bold text-slate-900 text-center">Galería de Momentos Inolvidables</h3>
+                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+                    <div class="bg-white p-2 rounded-2xl border border-slate-200 shadow-sm"><img src="WhatsApp Image 2026-10-23 at 8.19.50 PM (3).jpeg" alt="Familia" class="rounded-xl w-full h-60 object-cover"></div>
+                    <div class="bg-white p-2 rounded-2xl border border-slate-200 shadow-sm"><img src="WhatsApp Image 2026-10-23 at 8.19.50 PM (4).jpeg" alt="Familia" class="rounded-xl w-full h-60 object-cover"></div>
+                    <div class="bg-white p-2 rounded-2xl border border-slate-200 shadow-sm"><img src="WhatsApp Image 2026-10-23 at 8.19.50 PM (6).jpeg" alt="Familia" class="rounded-xl w-full h-60 object-cover"></div>
+                    <div class="bg-white p-2 rounded-2xl border border-slate-200 shadow-sm"><img src="WhatsApp Image 2026-10-23 at 8.19.50 PM (7).jpeg" alt="Familia" class="rounded-xl w-full h-60 object-cover"></div>
+                    <div class="bg-white p-2 rounded-2xl border border-slate-200 shadow-sm"><img src="WhatsApp Image 2026-10-23 at 8.19.50 PM (8).jpeg" alt="Familia" class="rounded-xl w-full h-60 object-cover"></div>
+                    <div class="bg-white p-2 rounded-2xl border border-slate-200 shadow-sm"><img src="WhatsApp Image 2026-10-23 at 8.19.50 PM (10).jpeg" alt="Familia" class="rounded-xl w-full h-60 object-cover"></div>
+                    <div class="bg-white p-2 rounded-2xl border border-slate-200 shadow-sm"><img src="WhatsApp Image 2026-10-23 at 8.19.50 PM (11).jpeg" alt="Familia" class="rounded-xl w-full h-60 object-cover"></div>
+                    <div class="bg-white p-2 rounded-2xl border border-slate-200 shadow-sm"><img src="WhatsApp Image 2026-10-23 at 8.19.50 PM (12).jpeg" alt="Familia" class="rounded-xl w-full h-60 object-cover"></div>
+                    <div class="bg-white p-2 rounded-2xl border border-slate-200 shadow-sm"><img src="WhatsApp Image 2026-10-23 at 8.19.50 PM (13).jpeg" alt="Familia" class="rounded-xl w-full h-60 object-cover"></div>
+                    <div class="bg-white p-2 rounded-2xl border border-slate-200 shadow-sm"><img src="WhatsApp Image 2026-10-23 at 8.19.50 PM (14).jpeg" alt="Familia" class="rounded-xl w-full h-60 object-cover"></div>
+                    <div class="bg-white p-2 rounded-2xl border border-slate-200 shadow-sm"><img src="WhatsApp Image 2026-10-23 at 8.19.50 PM (17).jpeg" alt="Familia" class="rounded-xl w-full h-60 object-cover"></div>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 text-slate-400 py-8 text-center border-t border-slate-800 mt-16">
+        <p class="text-sm">Creado con todo el amor y orgullo por su familia &bull; Homenaje digital al Ing. Tomás Toledo Lagunas.</p>
+    </footer>
+
+</body>
+</html>
